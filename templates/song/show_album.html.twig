@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ album.title }}</h1>
+
+    <ul class="list-group list-group-flush py-4">
+        {% for song in album.songs %}
+            <li class="list-group-item">{{ song.title }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('song_add_to_album', {'id': album.id}) }}">Ajouter un titre à cet album</a>
+    {% endif %}
+{% endblock %}
+

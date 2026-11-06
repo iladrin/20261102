@@ -19,6 +19,21 @@
         {% endif %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            {% include '_menu.html.twig' %}
+        </header>
+        <main>
+            {% if is_granted('ROLE_ADMIN') %}
+
+            {% endif %}
+            {% for type, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ type }}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% block body %}{% endblock %}
+        </main>
     </body>
 </html>

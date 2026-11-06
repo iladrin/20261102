@@ -5,6 +5,8 @@ framework:
     # Note that the session will be started ONLY if you read or write from it.
     session: true
 
+    ide: 'phpstorm://open?file=%%f&line=%%l'
+
     #esi: true
     #fragments: true
 

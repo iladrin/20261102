@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Albums</h1>
+
+    <ul class="list-group list-group-flush">
+        {% for album in albums %}
+            <li class="list-group-item">
+                <a href="{{ path('song_show_album', {'id': album.id}) }}">{{ album.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

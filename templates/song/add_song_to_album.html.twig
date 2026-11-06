@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Ajouter un titre à l’album « {{ album.title }} »</h1>
+    {{ form(add_song_to_album_form) }}
+{% endblock %}
+

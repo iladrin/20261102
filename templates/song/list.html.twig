@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Songs</h1>
+
+    <ul class="list-group list-group-flush">
+    {% for song in songs %}
+        <li class="list-group-item">{{ song.title }}</li>
+    {% else %}
+        <li>No songs</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
